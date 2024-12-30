@@ -2,13 +2,13 @@
 
 namespace Tests\Traits;
 
-use App\Providers\AuthServiceProvider;
+use App\Providers\AppServiceProvider;
 
 trait WithTestingSeeder
 {
-    public function setUpWithTestingSeeder()
+    public function setUpWithTestingSeeder(): void
     {
         $this->artisan('db:seed', ['--class' => 'TestingSeeder']);
-        (new AuthServiceProvider(app()))->boot();
+        (new AppServiceProvider(app()))->boot();
     }
 }

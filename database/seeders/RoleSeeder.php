@@ -63,7 +63,7 @@ class RoleSeeder extends Seeder
         $this->createRole(RoleName::CUSTOMER, $permissions);
     }
 
-    public function createStaffRole()
+    public function createStaffRole(): void
     {
         $permissions = Permission::whereIn('name', [
             'order.update',
